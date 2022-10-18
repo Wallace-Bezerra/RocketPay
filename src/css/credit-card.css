@@ -68,4 +68,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  border: 2px solid gray;
+  border-radius: 15px;
 }
