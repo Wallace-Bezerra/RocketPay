@@ -5,7 +5,7 @@
   width: 36rem;
   height: 23rem;
   padding: 2rem;
-
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,6 +68,4 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  border: 2px solid gray;
-  border-radius: 15px;
 }
