@@ -1,4 +1,6 @@
 import "./css/index.css"
+import Imask from "imask"
+
 const ccBg01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path")
 const ccBg02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path")
 const ccLogo = document.querySelector(".cc-logo span:last-child img")
@@ -24,3 +26,5 @@ function setCard(type) {
 }
 globalThis.setCard = setCard
 setCard("elo")
+
+Imask()
