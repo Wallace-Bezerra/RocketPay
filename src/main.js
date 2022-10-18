@@ -3,6 +3,7 @@ const ccBg01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path")
 const ccBg02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path")
 const ccLogo = document.querySelector(".cc-logo span:last-child img")
 const background = document.querySelector(".cc")
+const inputCard = document.getElementById("card-number")
 
 function setCard(type) {
   const colors = {
@@ -23,4 +24,17 @@ function setCard(type) {
   ccLogo.setAttribute("src", `./public/cc-${type}.svg`)
 }
 globalThis.setCard = setCard
-setCard("elo")
+setCard("mastercard")
+const string = "2bvv"
+
+// console.log()
+inputCard.addEventListener("input", (event) => {
+  // console.log(event.currentTarget.slice(0, 2))
+  if (event.currentTarget.value.slice(0, 2) === "12") {
+    setCard("visa")
+  } else if (event.currentTarget.value === "2") {
+    setCard("mastercard")
+  } else {
+    setCard("default")
+  }
+})
