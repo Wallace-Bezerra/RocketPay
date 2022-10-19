@@ -69,3 +69,9 @@
   inset: 0;
   z-index: 0;
 }
+
+.cc-logo span:last-child img {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
