@@ -40,7 +40,7 @@ function setCard(type) {
   ccBg02.setAttribute("fill", colors[type][1])
   // background.style.backgroundColor = colors[type][0].background
   background.style.backgroundImage = colors[type][0].background
-  ccLogo.setAttribute("src", `./public/cc-${type}.svg`)
+  ccLogo.setAttribute("src", `../public/cc-${type}.svg`)
 }
 globalThis.setCard = setCard
 // setCard("elo")
