@@ -16,50 +16,36 @@ function setCard(type) {
     // visa: ["#2D57F2", "#436D99"],
     visa: [
       {
-        colors: ["#2D57F2", "#436D99"],
+        // colors: ["#2D57F2", "#436D99"],
         background: "url('./bg-visa.svg')",
       },
     ],
     mastercard: [
       {
-        colors: ["#C69347", "#DF6F29"],
-        background: "blue",
+        // colors: ["#C69347", "#DF6F29"],
+        background: "url('./bg-mastercard.svg')",
       },
     ],
     // elo: [],
     // default: ["#323238", "#121214"],
     default: [
       {
-        colors: ["#323238", "#121214"],
+        // colors: ["#323238", "#121214"],
         background: "url('./bg-default.svg')",
       },
     ],
   }
 
-  ccBg01.setAttribute("fill", colors[type][0])
-  ccBg02.setAttribute("fill", colors[type][1])
+  // ccBg01.setAttribute("fill", colors[type][0])
+  // ccBg02.setAttribute("fill", colors[type][1])
   // background.style.backgroundColor = colors[type][0].background
   background.style.backgroundImage = colors[type][0].background
   ccLogo.setAttribute("src", `./cc-${type}.svg`)
 }
 globalThis.setCard = setCard
-// setCard("elo")
-
-// setCard("mastercard")
-
-// inputCard.addEventListener("input", (event) => {
-//   // console.log(event.currentTarget.slice(0, 2))
-//   if (event.currentTarget.value.slice(0, 2) === "12") {
-//     setCard("visa")
-//   } else if (event.currentTarget.value === "2") {
-//     setCard("mastercard")
-//   } else {
-//     setCard("default")
-//   }
-// })
 
 const securityCodeMasked = Imask(securityCode, { mask: "0000" })
-
+const cardHolderMasked = Imask(cardHolder, { mask: /[a-zA-Z\s]$/ })
 const expiratitonDateMasked = Imask(expiratitonDate, {
   mask: "MM{/}YY",
   lazy: false,
@@ -106,10 +92,16 @@ const addButton = document.querySelector("#add-card")
 console.log(addButton)
 addButton.addEventListener("click", (e) => {
   e.preventDefault()
-  // document.querySelector(".cc-holder .value").innerText = cardHolder.value
+  alert("Cartão adicionado!")
 })
 
-cardHolder.addEventListener("input", () => {
+// cardHolder.addEventListener("input", () => {
+//   const ccHolder = document.querySelector(".cc-holder .value")
+//   ccHolder.innerText = cardHolder.value.length
+//     ? cardHolder.value
+//     : "FULANO DA SILVA"
+// })
+cardHolderMasked.on("accept", () => {
   const ccHolder = document.querySelector(".cc-holder .value")
   ccHolder.innerText = cardHolder.value.length
     ? cardHolder.value
@@ -143,7 +135,7 @@ expiratitonDateMasked.on("accept", () => {
 
 function updateExpirationDate(date) {
   const ccDate = document.querySelector(".cc-expiration .value")
-  // ccDate.innerText = date.length ? date : "02/32"
+
   if (date.length > 1) {
     ccDate.innerText = date
   } else if (date === "/") {

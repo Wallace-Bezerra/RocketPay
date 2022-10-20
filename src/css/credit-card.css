@@ -1,12 +1,13 @@
 /* CC */
 .cc {
   background: no-repeat center/cover;
-  background-image: url("/cc-bg.svg");
+  background-image: url("./bg-default.svg");
   width: 36rem;
   height: 23rem;
   padding: 2rem;
   border-radius: 15px;
   display: flex;
+  gap: 34px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -37,6 +38,9 @@
 .cc-security {
   display: grid;
   gap: 0.4rem;
+}
+.cc-holder {
+  margin-bottom: 11px;
 }
 
 .cc .label {
