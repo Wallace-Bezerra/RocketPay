@@ -17,7 +17,7 @@ function setCard(type) {
     visa: [
       {
         colors: ["#2D57F2", "#436D99"],
-        background: "url('../public/bg-visa.svg')",
+        background: "url('./bg-visa.svg')",
       },
     ],
     mastercard: [
@@ -31,7 +31,7 @@ function setCard(type) {
     default: [
       {
         colors: ["#323238", "#121214"],
-        background: "url('../public/bg-default.svg')",
+        background: "url('./bg-default.svg')",
       },
     ],
   }
@@ -40,7 +40,7 @@ function setCard(type) {
   ccBg02.setAttribute("fill", colors[type][1])
   // background.style.backgroundColor = colors[type][0].background
   background.style.backgroundImage = colors[type][0].background
-  ccLogo.setAttribute("src", `../public/cc-${type}.svg`)
+  ccLogo.setAttribute("src", `./cc-${type}.svg`)
 }
 globalThis.setCard = setCard
 // setCard("elo")
