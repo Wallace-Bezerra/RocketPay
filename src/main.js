@@ -14,32 +14,31 @@ const cardHolder = document.getElementById("card-holder")
 function setCard(type) {
   const colors = {
     // visa: ["#2D57F2", "#436D99"],
-    visa: [
-      {
-        // colors: ["#2D57F2", "#436D99"],
-        background: "url('./bg-visa.svg')",
-      },
-    ],
-    mastercard: [
-      {
-        // colors: ["#C69347", "#DF6F29"],
-        background: "url('./bg-mastercard.svg')",
-      },
-    ],
-    // elo: [],
+    visa: {
+      // colors: ["#2D57F2", "#436D99"],
+      background: "url('./bg-visa.svg')",
+    },
+    mastercard: {
+      // colors: ["#C69347", "#DF6F29"],
+      background: "url('./bg-mastercard.svg')",
+    },
+    jcb: {
+      background: "url('./bg-jcb.svg')",
+    },
+    elo: {
+      background: "url('./bg-elo.svg')",
+    },
     // default: ["#323238", "#121214"],
-    default: [
-      {
-        // colors: ["#323238", "#121214"],
-        background: "url('./bg-default.svg')",
-      },
-    ],
+    default: {
+      // colors: ["#323238", "#121214"],
+      background: "url('./bg-default.svg')",
+    },
   }
 
   // ccBg01.setAttribute("fill", colors[type][0])
   // ccBg02.setAttribute("fill", colors[type][1])
   // background.style.backgroundColor = colors[type][0].background
-  background.style.backgroundImage = colors[type][0].background
+  background.style.backgroundImage = colors[type].background
   ccLogo.setAttribute("src", `./cc-${type}.svg`)
 }
 globalThis.setCard = setCard
@@ -76,6 +75,16 @@ const cardNumberMasked = Imask(cardNumber, {
     },
     {
       mask: "0000 0000 0000 0000",
+      regex: /^6/,
+      cardtype: "elo",
+    },
+    {
+      mask: "0000 0000 0000 0000",
+      regex: /^(?:35\d{0,2})\d{0,12}/,
+      cardtype: "jcb",
+    },
+    {
+      mask: "0000 0000 0000 0000",
       cardtype: "default",
     },
   ],
@@ -88,11 +97,41 @@ const cardNumberMasked = Imask(cardNumber, {
   },
 })
 
-const addButton = document.querySelector("#add-card")
-console.log(addButton)
+const addButton = document.querySelector("form .button")
+const modalButton = document.querySelector(".overlay-modal button")
+const modal = document.querySelector(".overlay-modal")
+const error = document.querySelector(".error")
+function cleanInput() {
+  cardHolderMasked.value = ""
+  cardNumberMasked.value = ""
+  expiratitonDateMasked.value = ""
+  securityCodeMasked.value = ""
+}
+// console.log(addButton)
 addButton.addEventListener("click", (e) => {
   e.preventDefault()
-  alert("Cartão adicionado!")
+  console.log(cardHolderMasked.value)
+  if (
+    !cardHolderMasked.value ||
+    !cardNumberMasked.value ||
+    !expiratitonDateMasked.value ||
+    !securityCodeMasked.value
+  ) {
+    error.classList.add("active")
+  } else {
+    modal.classList.add("active")
+    error.classList.remove("active")
+    modal.addEventListener("click", (event) => {
+      if (event.currentTarget === event.target) {
+        modal.classList.remove("active")
+        cleanInput()
+      }
+    })
+  }
+})
+modalButton.addEventListener("click", () => {
+  modal.classList.remove("active")
+  cleanInput()
 })
 
 // cardHolder.addEventListener("input", () => {

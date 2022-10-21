@@ -10,6 +10,7 @@
   gap: 34px;
   flex-direction: column;
   justify-content: space-between;
+  transition: background-image 0.4s cubic-bezier(0.17, 0.67, 0.19, 1);
 }
 
 .cc-logo {
@@ -38,6 +39,9 @@
 .cc-security {
   display: grid;
   gap: 0.4rem;
+}
+.cc-security {
+  width: 40px;
 }
 .cc-holder {
   margin-bottom: 11px;

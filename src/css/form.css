@@ -3,6 +3,7 @@ form {
   max-width: 36rem;
   display: grid;
   gap: 1.6rem;
+  position: relative;
 }
 
 form .input-wrapper {
@@ -40,9 +41,9 @@ form .flex .input-wrapper {
   flex: 1;
 }
 
-form button {
+.button {
   margin-top: 1.6rem;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +64,6 @@ form button {
   transition: filter 0.3s;
 }
 
-form button:hover {
-  filter: brightness(1.1);
+button:hover {
+  filter: brightness(1.2);
 }

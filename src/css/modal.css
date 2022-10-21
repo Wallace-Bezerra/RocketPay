@@ -1,0 +1,43 @@
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(17, 17, 17, 0.705);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+  transform: translateY(30px);
+  z-index: 2;
+}
+.overlay-modal.active {
+  transform: translateY(0px);
+  opacity: 1;
+  pointer-events: all;
+}
+.modal {
+  max-width: 440px;
+  width: 100%;
+  height: 270px;
+  border-radius: 15px;
+  margin-inline: 20px;
+  background-color: rgb(28, 31, 30);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.modal p {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.modal .button {
+  font-size: 20px;
+  max-width: 195px;
+  width: 100%;
+}

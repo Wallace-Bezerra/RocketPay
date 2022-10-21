@@ -63,28 +63,38 @@
       <form action="">
         <div class="input-wrapper">
           <label for="card-number">Número do cartão</label>
-          <input id="card-number" />
+          <input id="card-number" inputmode="numeric" />
         </div>
 
         <div class="input-wrapper">
           <label for="card-holder">Nome do titular</label>
-          <input id="card-holder" maxlength="38" />
+          <input id="card-holder" maxlength="34" />
         </div>
 
         <div class="flex">
           <div class="input-wrapper">
             <label for="expiration-date">Expiração</label>
-            <input id="expiration-date" />
+            <input id="expiration-date" inputmode="numeric" />
           </div>
 
           <div class="input-wrapper">
             <label for="security-code">CVC</label>
-            <input id="security-code" />
+            <input id="security-code" inputmode="numeric" required />
           </div>
         </div>
-
-        <button id="add-card">ADICIONAR CARTÃO</button>
+        <div class="wrapper">
+          <button type="submit" class="button">ADICIONAR CARTÃO</button>
+          <div class="error">
+            <p>Insira todos os campos!</p>
+          </div>
+        </div>
       </form>
+    </div>
+    <div class="overlay-modal">
+      <div class="modal">
+        <p>Cartão adicionado!</p>
+        <button class="button">FINALIZAR</button>
+      </div>
     </div>
 
     <script type="module" src="./src/main.js"></script>

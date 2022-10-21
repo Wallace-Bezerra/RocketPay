@@ -4,7 +4,7 @@
 <rect width="561" height="355" rx="30" fill="#16084C"/>
 </mask>
 <g mask="url(#mask0_3_2251)">
-<path d="M0 259H561V329C561 345.569 547.569 359 531 359H30C13.4314 359 0 345.569 0 329V259Z" fill="#3A27AF"/>
+<path d="M0 259H561V329C561 345.569 547.569 359 531 359H30C13.4314 359 0 345.569 0 329V259Z" fill="#02000A"/>
 <rect x="174" y="0.440918" width="47" height="47" fill="white" fill-opacity="0.25"/>
 <rect x="221" y="47.4409" width="64" height="64" fill="white" fill-opacity="0.15"/>
 <rect x="285" y="13.8818" width="33.5591" height="33.5591" fill="white" fill-opacity="0.15"/>

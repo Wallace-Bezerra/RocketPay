@@ -1,7 +1,19 @@
 @import "base.css";
 @import "credit-card.css";
 @import "form.css";
+@import "modal.css";
+@import "error.css";
 
+@media (max-width: 780px) {
+  .error {
+    bottom: -57px;
+    left: 0px;
+  }
+  .error::before {
+    left: 172px;
+    top: -5px;
+  }
+}
 @media (max-width: 420px) {
   :root {
     font-size: 50%;
@@ -15,13 +27,20 @@
     background: none;
     border: none;
   }
-
+  .cc {
+    gap: 15px;
+  }
   .cc-bg svg {
     width: 100%;
     height: auto;
   }
+  .modal p {
+    text-align: center;
+  }
+  .error::before {
+    left: 136px;
+  }
 }
-
 @media (min-width: 780px) {
   #app {
     grid-template-areas:
