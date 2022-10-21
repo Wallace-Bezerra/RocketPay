@@ -35,6 +35,7 @@
     height: auto;
   }
   .modal p {
+    padding-inline: 20px;
     text-align: center;
   }
   .error::before {
