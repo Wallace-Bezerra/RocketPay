@@ -3,6 +3,7 @@
 @import "form.css";
 @import "modal.css";
 @import "error.css";
+@import "redes.css";
 
 @media (max-width: 780px) {
   .error {
@@ -40,6 +41,10 @@
   }
   .error::before {
     left: 136px;
+  }
+  .error{
+    top: 64px;
+    bottom: -50px;
   }
 }
 @media (min-width: 780px) {

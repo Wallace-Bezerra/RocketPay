@@ -29,6 +29,11 @@
   z-index: -1;
 }
 .error.active {
+  transition: all 0.3s ease;
   opacity: 1;
   pointer-events: all;
+}
+
+.invalid{
+  border: 2px solid red;
 }
