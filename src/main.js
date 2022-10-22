@@ -92,7 +92,12 @@ const addButton = document.querySelector("form .button")
 const modalButton = document.querySelector(".overlay-modal button")
 const modal = document.querySelector(".overlay-modal")
 const error = document.querySelector(".error")
-const arrayInputs = [cardNumberMasked,cardHolderMasked,expiratitonDateMasked,securityCodeMasked];
+const arrayInputs = [
+  cardNumberMasked,
+  cardHolderMasked,
+  expiratitonDateMasked,
+  securityCodeMasked,
+]
 
 function cleanInput() {
   cardHolderMasked.value = ""
@@ -108,7 +113,6 @@ addButton.addEventListener("click", (e) => {
     !expiratitonDateMasked.value ||
     !securityCodeMasked.value
   ) {
-
   } else {
     modal.classList.add("active")
     modal.addEventListener("click", (event) => {
@@ -118,14 +122,13 @@ addButton.addEventListener("click", (e) => {
       }
     })
   }
-  arrayInputs.forEach((item)=>{
-    if(item.value === ""){
+  arrayInputs.forEach((item) => {
+    if (item.value === "") {
       item.el.input.classList.add("invalid")
       error.classList.add("active")
-    }
-    else{
-        error.classList.remove("active")
-        item.el.input.classList.remove("invalid")
+    } else {
+      error.classList.remove("active")
+      item.el.input.classList.remove("invalid")
     }
   })
 })
@@ -133,7 +136,6 @@ modalButton.addEventListener("click", () => {
   modal.classList.remove("active")
   cleanInput()
 })
-
 
 cardHolderMasked.on("accept", () => {
   const ccHolder = document.querySelector(".cc-holder .value")
