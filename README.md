@@ -47,14 +47,22 @@ O Rocketpay é um componente que simula o formulário de preenchimento de cartã
 
 <p align="center">
   <img alt="rocketpay" src=".github/videoMobile.gif"
-  width="100%">
+  width="60%">
+</p>
+
+## 🧠 Atributos para usar teclado numérico no mobile
+
+<p align="center">
+  <img alt="rocketpay" src=".github/html.png" width="70%">
 </p>
 
 ---
 
+<p align="center">
 Feito com ♥ by Wallace Bezerra
+</p>
 
 <p align="center">
   <img alt="rocketpay" src=".github/github.png"
-  width="100%">
+  width="30%">
 </p>
