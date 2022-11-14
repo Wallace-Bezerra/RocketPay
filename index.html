@@ -1,121 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./public/cc-icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rocketpay</title>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- <link rel="stylesheet" href="./src/css/index.css" /> -->
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <img src="./public/logo.svg" alt="ícone rocketpay" />
-      </header>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./public/cc-icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocketpay</title>
 
-      <section class="cc">
-        <div class="cc-bg"></div>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="./src/css/index.css" /> -->
+</head>
 
-        <div class="cc-logo">
-          <span>
-            <img src="./public/cc-icon.svg" alt="ícone padrão de cartão" />
-          </span>
-          <span
-            ><img
-              src="./public/cc-default.svg"
-              alt="ícone do cartão de crédito selecionado"
-          /></span>
-        </div>
+<body>
+  <div id="app">
+    <header>
+      <img src="./public/logo.svg" alt="ícone rocketpay" />
+    </header>
 
-        <div class="cc-info">
-          <div class="cc-number">1234 5678 9012 3456</div>
+    <section class="cc">
+      <div class="cc-bg"></div>
 
-          <div class="cc-holder">
-            <div class="label">Nome do titular</div>
-            <div class="value">FULANO DA SILVA</div>
-          </div>
-
-          <div class="cc-extra">
-            <div class="cc-expiration">
-              <div class="label">Expiração</div>
-              <div class="value">02/32</div>
-            </div>
-            <div class="cc-security">
-              <div class="label">CVC</div>
-              <div class="value">123</div>
-            </div>
-            <img
-              src="./public/cc-chip.svg"
-              alt="ícone de chip de cartão de crédito"
-            />
-          </div>
-        </div>
-      </section>
-
-      <form action="">
-        <div class="input-wrapper">
-          <label for="card-number">Número do cartão</label>
-          <input id="card-number" inputmode="numeric" />
-        </div>
-
-        <div class="input-wrapper">
-          <label for="card-holder">Nome do titular</label>
-          <input id="card-holder" maxlength="34" />
-        </div>
-
-        <div class="flex">
-          <div class="input-wrapper">
-            <label for="expiration-date">Expiração</label>
-            <input id="expiration-date" inputmode="numeric" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="security-code">CVC</label>
-            <input id="security-code" inputmode="numeric" required />
-          </div>
-        </div>
-        <div class="wrapper">
-          <button type="submit" class="button">ADICIONAR CARTÃO</button>
-          <div class="error">
-            <p>Insira todos os campos!</p>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="overlay-modal">
-      <div class="modal">
-        <p>Cartão adicionado!</p>
-        <button class="button">FINALIZAR</button>
+      <div class="cc-logo">
+        <span>
+          <img src="./public/cc-icon.svg" alt="ícone padrão de cartão" />
+        </span>
+        <span><img src="./public/cc-default.svg" alt="ícone do cartão de crédito selecionado" /></span>
       </div>
-    </div>
-    <div >
-      <ul class="redes">
-        <li>
-          <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/wallace-bezerra-da-silva-1b305a200/"
-          >
-            <img src="/public/redes/icon-linkedin.svg" alt=""/>
-          </a>
-        </li>
-        <li>
-          <a
-            id="github"
-            target="_blank"
-            href="https://github.com/Wallace-Bezerra"
-          >
-            <img src="/public/redes/github.svg" alt=""
-          /></a>
-        </li>
-      </ul>
-    </div>
 
-    <script type="module" src="./src/main.js"></script>
-  </body>
+      <div class="cc-info">
+        <div class="cc-number">1234 5678 9012 3456</div>
+
+        <div class="cc-holder">
+          <div class="label">Nome do titular</div>
+          <div class="value">FULANO DA SILVA</div>
+        </div>
+
+        <div class="cc-extra">
+          <div class="cc-expiration">
+            <div class="label">Expiração</div>
+            <div class="value">02/32</div>
+          </div>
+          <div class="cc-security">
+            <div class="label">CVC</div>
+            <div class="value">123</div>
+          </div>
+          <img src="./public/cc-chip.svg" alt="ícone de chip de cartão de crédito" />
+        </div>
+      </div>
+    </section>
+
+    <form action="">
+      <div class="input-wrapper">
+        <label for="card-number">Número do cartão</label>
+        <input id="card-number" inputmode="numeric" />
+      </div>
+
+      <div class="input-wrapper">
+        <label for="card-holder">Nome do titular</label>
+        <input id="card-holder" maxlength="34" />
+      </div>
+
+      <div class="flex">
+        <div class="input-wrapper">
+          <label for="expiration-date">Expiração</label>
+          <input id="expiration-date" inputmode="numeric" />
+        </div>
+
+        <div class="input-wrapper">
+          <label for="security-code">CVC</label>
+          <input id="security-code" inputmode="numeric" required />
+        </div>
+      </div>
+      <div class="wrapper">
+        <button type="submit" class="button">ADICIONAR CARTÃO</button>
+        <div class="error">
+          <p>Insira todos os campos!</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="overlay-modal">
+    <div class="modal">
+      <p>Cartão adicionado!</p>
+      <button class="button">FINALIZAR</button>
+    </div>
+  </div>
+  <div>
+    <ul class="redes">
+      <li>
+        <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/wallace-bezerra/">
+          <img src="/public/redes/icon-linkedin.svg" alt="" />
+        </a>
+      </li>
+      <li>
+        <a id="github" target="_blank" href="https://github.com/Wallace-Bezerra">
+          <img src="/public/redes/github.svg" alt="" /></a>
+      </li>
+    </ul>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>
